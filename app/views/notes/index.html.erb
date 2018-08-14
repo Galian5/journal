@@ -1,2 +1,27 @@
-<h1>Notes#index</h1>
-<p>Find me in app/views/notes/index.html.erb</p>
+<% provide(:title, 'List of notes') %>
+
+<h1>List of travellers notes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Date</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @notes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.title %></td>
+        <td><%= recipe.text %></td>
+        <td><%= recipe.time %></td>
+        <td><%= link_to 'Show', note_path(note) %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Destroy', note_path(note),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add new note about your journey', notes_new_path %>
