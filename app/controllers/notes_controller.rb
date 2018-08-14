@@ -7,7 +7,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-      redirect_to @note
+      redirect_to root_path
     else
       render 'new'
     end
