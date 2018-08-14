@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'notes#index'
+
   get 'users/new'
 
   get 'users/create'

@@ -1,2 +1,21 @@
-<h1>Notes#new</h1>
-<p>Find me in app/views/notes/new.html.erb</p>
+<%= form_with scope: :note, local: true do |form| %>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
+
+    <p>
+      <%= form.label :text %><br>
+      <%= form.text_area :text %>
+    </p>
+
+
+    <p>
+      <%= form.label :date %><br>
+      <%= form.select_date :date %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+<% end %>
