@@ -1,2 +1,39 @@
-<h1>Notes#edit</h1>
-<p>Find me in app/views/notes/edit.html.erb</p>
+<% provide(:title, 'Edit note') %>
+
+<%= form_with scope: :note, url: notes_path, local: true do |form| %>
+
+    <% if @note.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@note.errors.count, 'error') %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @note.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
+
+    <p>
+      <%= form.label :text %><br>
+      <%= form.text_area :text %>
+    </p>
+
+    <p>
+      <%= form.label :date_of_event %><br>
+      <%= form.date_select :date %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+
+    <%= link_to 'Back', root_path %>
+<% end %>
