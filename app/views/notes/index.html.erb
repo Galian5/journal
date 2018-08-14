@@ -10,11 +10,11 @@
     <th colspan="3"></th>
   </tr>
 
-  <% @notes.each do |recipe| %>
+  <% @notes.each do |note| %>
       <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.text %></td>
-        <td><%= recipe.time %></td>
+        <td><%= note.title %></td>
+        <td><%= note.text %></td>
+        <td><%= note.time %></td>
         <td><%= link_to 'Show', note_path(note) %></td>
         <td><%= link_to 'Edit', edit_note_path(note) %></td>
         <td><%= link_to 'Destroy', note_path(note),
