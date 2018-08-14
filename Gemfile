@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rubocop', '~> 0.58.2', require: false
 # clearance for authentication
 gem 'clearance'
+# bootstrap will make it look almost good
+gem 'bootstrap-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
