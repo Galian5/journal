@@ -38,6 +38,9 @@ gem 'rubocop', '~> 0.58.2', require: false
 gem 'clearance'
 # bootstrap will make it look almost good
 gem 'bootstrap-sass'
+# things for async
+gem 'sidekiq'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
